@@ -4,7 +4,7 @@ NQueens - Das 8x8 Damen Problem
 
 Verwendung von 
 
-- ( im Funktionsumfang beschränkten Demoversion der )
+- der ( im Funktionsumfang beschränkten Demoversion der )
   
   CASE-Software "EasyCASE 6.5" für Windows von SIEMENS AG Österreich 
 
