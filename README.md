@@ -4,7 +4,7 @@ NQueens - Das 8x8 Damen Problem
 
 Lösung unter Verwendung der ( im Funktionsumfang beschränkten Demoversion der )
 
-CASE-Software "EasyCASE 6.5", (c)1989-1999 
+CASE-Software "EasyCASE 6.5" für Windows, (c)1989-1999 
 
 von 
 
