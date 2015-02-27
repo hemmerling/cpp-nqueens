@@ -2,7 +2,7 @@
 NQueens - Das 8x8 Damen Problem
 
 
-Verwendung der (Demoversion von)
+Verwendung der (Demoversion der)
 
 CASE-Software "EasyCASE 6.5", (c)1989-1999 
 
