@@ -1,7 +1,9 @@
 # cpp-nqueens
 NQueens - Das 8x8 Damen Problem
 
-Verwendung der 
+
+Verwendung der (Demoversion von)
+
 CASE-Software "EasyCASE 6.5", (c)1989-1999 
 
 von 
