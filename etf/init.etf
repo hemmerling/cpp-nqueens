@@ -1,0 +1,100 @@
+EasyCASE=CPP V6.5 14.06.1999 17:30:46
+ShortInfo;
+EndShortInfo;
+Options;
+IfLayout=horizontal
+LevelNumbers=yes
+LineNumbers=yes
+Colors=16777215,0,12582912,12632256,0,0,0,16711680,8388736,0,33023,32768,0,0,0,0,0,32768,12632256,255,65280,255,255,16711935
+ScreenFont=System,,100,1,-13,0,700,0,0,0,0,0,0,1,2,1,34,96,96
+PrinterFont=Courier,,120,1,-50,0,400,0,0,0,0,0,0,2,1,0,49,300,300
+LastLevelId=1
+EndOptions;
+Level=1:3
+Text:2
+Line=init.c
+EndText;
+LevelBody;
+Text:3
+Line=#include "nqueensh.h"
+EndText;
+Text:4
+Line=//
+Line=// * Funktion                                                
+Line=// * Funktionsname: MP_init
+Line=// * Gueltigkeitsbereich: modulgobal (static)                                             
+Line=// * Beschreibung:  Initialisierung aller Felder
+Line=// * Autor: Rolf Hemmerling
+Line=// * Version: 1.00
+Line=// * Last Update:  08.06.1999 
+Line=// * Eingabe-Parameter: %
+Line=// * Ausgabe-Parameter: %
+Line=// * Rueckgabe-Parameter: %
+Line=// * Liste benutzter modulglobaler (static) Variablen: 
+Line=// MV_spalte, MV_li_diag, MV_re_diag, MV_schachbrett
+Line=// * Liste benutzter globaler (external) Variablen: %
+Line=//
+EndText;
+Function:20
+Text:19
+Line=void MP_init(void)
+EndText;
+FunctionBody;
+Text:21
+Line=
+Line=// Laufvariable
+Line=int LV_ii = 0;
+Line=int LV_jj = 0;
+Line=
+Line=// Feld-Initialisierung
+EndText;
+For:27
+Text:27
+Line=LV_ii=0; 
+Line=LV_ii<SIZE_SPALTE; LV_ii++
+EndText;
+ForBody;
+Text:30
+Line=MV_spalte[LV_ii] = TRUE;
+EndText;
+EndFor;
+For:32
+Text:32
+Line=LV_ii=0; 
+Line=LV_ii<SIZE_LI_DIAG; LV_ii++
+EndText;
+ForBody;
+Text:35
+Line=MV_li_diag[LV_ii] = TRUE;
+EndText;
+EndFor;
+For:37
+Text:37
+Line=LV_ii=0; 
+Line=LV_ii<SIZE_RE_DIAG; LV_ii++
+EndText;
+ForBody;
+Text:40
+Line=MV_re_diag[LV_ii] = TRUE;
+EndText;
+EndFor;
+For:42
+Text:42
+Line=LV_ii=0; 
+Line=LV_ii<SIZE_SCHACHBRETT; LV_ii++
+EndText;
+ForBody;
+For:45
+Text:45
+Line=LV_jj; 
+Line=LV_jj<SIZE_SCHACHBRETT; 
+Line=LV_jj++
+EndText;
+ForBody;
+Text:49
+Line=MV_schachbrett[LV_ii][LV_jj] = FALSE;
+EndText;
+EndFor;
+EndFor;
+EndFunction;
+EndLevel;

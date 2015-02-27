@@ -1,0 +1,72 @@
+EasyCASE=CPP V6.5 14.06.1999 17:12:21
+ShortInfo;
+EndShortInfo;
+Options;
+IfLayout=horizontal
+LevelNumbers=no
+LineNumbers=no
+Colors=16777215,0,12582912,12632256,0,0,0,16711680,8388736,0,33023,32768,0,0,0,0,0,32768,12632256,255,65280,255,255,16711935
+ScreenFont=System,,100,1,-13,0,700,0,0,0,0,0,0,1,2,1,34,96,96
+PrinterFont=Courier,,120,1,-50,0,400,0,0,0,0,0,0,2,1,0,49,300,300
+LastLevelId=1
+EndOptions;
+Level=1:3
+Text:2
+Line=nqueensh.h
+EndText;
+LevelBody;
+Text:3
+Line=#ifndef NQUEENS_H
+Line=#define NQUEENS_H
+Line=
+Line=#include <stdio.h>
+Line=
+Line=#define FALSE 0
+Line=#define TRUE !0
+Line=
+Line=// Groesse des Schachbretts
+Line=// SIZE_BOARD x SIZE_BOARD
+Line=#define SIZE_BOARD 8   
+Line=   
+Line=//  Loesung rekursiv finden
+Line=extern void MP_try(int);
+Line=
+Line=// Initialisierung
+Line=extern void MP_init(void);
+Line=
+Line=// Ablaufplan
+Line=extern void MP_nqueens(void);
+Line=
+Line=// Ausgabe der Ergebnisse
+Line=extern void MP_print(void);
+Line=
+Line=// Check, ob Schachbrett-Position "sicher" ist
+Line=extern int MP_check (int, int, int *, int *, int *);
+Line=
+Line=// Feld zur Aufnahme der Information, ob 
+Line=// j-te Zeile frei ist
+Line=extern int MV_spalte[];
+Line=#define SIZE_SPALTE SIZE_BOARD
+Line=#define OFFSET_SPALTE 1
+Line=
+Line=// Feld zur Aufnahme der Information, ob
+Line=// k-te /-Diagonale ist frei 
+Line=extern MV_li_diag[];
+Line=#define SIZE_LI_DIAG (2*SIZE_BOARD-1)
+Line=#define OFFSET_LI_DIAG 2
+Line=
+Line=// Feld zur Aufnahme der Information, ob
+Line=// k-te \-Diagonale frei ist
+Line=extern MV_re_diag[];
+Line=#define SIZE_RE_DIAG (2*SIZE_BOARD-1)
+Line=#define OFFSET_RE_DIAG -(SIZE_BOARD-1)
+Line=
+Line=// Feld zur Aufnahme der Position der Dame */
+Line=#define SIZE_SCHACHBRETT SIZE_BOARD
+Line=#define OFFSET_SCHACHBRETT 1
+Line=extern MV_schachbrett[SIZE_SCHACHBRETT]
+Line=                                     [SIZE_SCHACHBRETT];
+Line=
+Line=#endif
+EndText;
+EndLevel;

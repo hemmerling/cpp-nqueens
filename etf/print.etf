@@ -1,0 +1,89 @@
+EasyCASE=CPP V6.5 14.06.1999 08:53:39
+ShortInfo;
+EndShortInfo;
+Options;
+IfLayout=horizontal
+LevelNumbers=no
+LineNumbers=no
+Colors=16777215,0,12582912,12632256,0,0,0,16711680,8388736,0,33023,32768,0,0,0,0,0,32768,12632256,255,65280,255,255,16711935
+ScreenFont=System,,100,1,-13,0,700,0,0,0,0,0,0,1,2,1,34,96,96
+PrinterFont=Courier,,120,1,-50,0,400,0,0,0,0,0,0,2,1,0,49,300,300
+LastLevelId=1
+EndOptions;
+Level=1:3
+Text:2
+Line=print.c
+EndText;
+LevelBody;
+Text:3
+Line=#include "nqueensh.h"
+EndText;
+Text:4
+Line=//
+Line=// * Funktion
+Line=// * Funktionsname MP_print
+Line=// * Gueltigkeitsbereich: modulglobal (static)
+Line=// * Beschreibung: Ausdruck *einer* Lîsung 
+Line=// d.h. einem Schachbrett mit korrekt gesetzten Damen
+Line=// * Autor: Rolf Hemmerling
+Line=// * Version 1.00
+Line=// * Last Update: 08.06.1999
+Line=// * Eingabe-Parameter: %
+Line=// * Ausgabe-Parameter: %
+Line=// * Rueckgabe-Parameter: %
+Line=// * Liste benutzer modulglobaler (static) Variablen:
+Line=// MV_spalte, MV_li_diag, MV_re_diag, MV_schachbrett
+Line=// * Liste benutzter globaler (external) Variablen: %
+Line=//
+EndText;
+Function:21
+Text:20
+Line=void MP_print(void)
+EndText;
+FunctionBody;
+Text:22
+Line=// Laufvariable
+Line=int LV_ii = 0; 
+Line=int LV_jj = 0;
+Line=
+Line=//
+Line=// Ausgabe *einer* Lîsung
+Line=// Zeilenweise Ausgabe des Schachbretts
+Line=// "D" fÅr gesetzte Dame, "+" fÅr leeres Feld
+Line=//
+EndText;
+For:31
+Text:31
+Line=LV_ii=0;LV_ii<SIZE_SCHACHBRETT;LV_ii++
+EndText;
+ForBody;
+For:33
+Text:33
+Line=LV_jj=0;LV_jj<SIZE_SCHACHBRETT;LV_jj++
+EndText;
+ForBody;
+If:35
+Text:35
+Line=MV_schachbrett[LV_ii][LV_jj]
+EndText;
+Then;
+Text:37
+Line=printf("D ");
+EndText;
+Else;
+Text:41
+Line=printf("+ ");
+EndText;
+EndIf;
+EndFor;
+Text:44
+Line=// Schachbrettzeile abschlie·en
+Line=printf("\n");
+EndText;
+EndFor;
+Text:47
+Line=// Schachbrett mit Leerzeile abschliessen
+Line=printf ("\n");
+EndText;
+EndFunction;
+EndLevel;

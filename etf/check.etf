@@ -1,0 +1,78 @@
+EasyCASE=CPP V6.5 14.06.1999 17:31:05
+ShortInfo;
+EndShortInfo;
+Options;
+IfLayout=horizontal
+LevelNumbers=yes
+LineNumbers=yes
+Colors=16777215,0,12582912,12632256,0,0,0,16711680,8388736,0,33023,32768,0,0,0,0,0,32768,12632256,255,65280,255,255,16711935
+ScreenFont=System,,100,1,-13,0,700,0,0,0,0,0,0,1,2,1,34,96,96
+PrinterFont=Courier,Standard,60,1,-25,0,400,0,0,0,0,0,0,2,1,0,49,300,300
+LastLevelId=1
+EndOptions;
+Level=1:3
+Text:2
+Line=check.c
+Line=korregierter(!)
+Line=Algorithmus
+EndText;
+LevelBody;
+Text:5
+Line=#include "nqueensh.h"
+EndText;
+Text:6
+Line=//
+Line=// * Funktion
+Line=// * Funktionsname: MP_check
+Line=// * Beschreibung: Stellt fest, ob eine Position fuer eine Dame "sicher" ist
+Line=// * Autor: Rolf Hemmerling
+Line=// * Version: 1.01 (korregierter Algorithmus)
+Line=// * Last Update: 08.06.1999
+Line=// * Gueltigkeitsbereich der Funktion: modulglobal (static)
+Line=// * Eingabe-Parameter: 
+Line=// a) zu ueberpruefende Schachbrettposition (Zeilen- und Spaltenindex)
+Line=// b) Felder mit Informationen, ob Spalte, rechte, linke Diagonale schon
+Line=// belegt sind
+Line=// * Ausgabe-Parameter: %
+Line=// * Rueckgabe-Parameter:
+Line=// TRUE = Position ist "sicher"
+Line=// FALSE = Position ist "nicht sicher"
+Line=// * Liste benutzter modulglobaler (static) Variablen: %
+Line=// * Liste benutzter globaler (external) Variablen: %
+Line=//
+EndText;
+Function:26
+Text:25
+Line=int MP_check(int VV_zeile 
+Line=                     /* Zeile */,
+Line=                     int VV_spalte 
+Line=                     /* Spalte */, 
+Line=                     int *IV_spalte 
+Line=                     /* Feld mit belegten/freien Spalten) */, 
+Line=                     int *IV_li_diag 
+Line=                     /* Feld mit belegten/freien linken Diagonalen */,
+Line=                     int *IV_re_diag 
+Line=                     /* Feld mit belegten/freien rechten Diagonalen */)
+EndText;
+FunctionBody;
+Text:36
+Line=// * Berechnung, ob eine Position fuer eine Dame "sicher" ist: 
+Line=// * Spalte, rechte und linke Diagonale muessen noch "frei" sein
+Line=// * Rueckgabewert: 
+Line=// TRUE = Position ist "sicher"
+Line=// FALSE = Position ist "nicht sicher"
+EndText;
+Return:41
+Text:41
+Line=(IV_spalte[VV_spalte - 
+Line=                  OFFSET_SPALTE] && 
+Line=IV_re_diag[VV_zeile -
+Line=                   VV_spalte -
+Line=                   OFFSET_RE_DIAG] &&
+Line=IV_li_diag[VV_zeile +
+Line=                 VV_spalte -
+Line=                 OFFSET_LI_DIAG])
+EndText;
+EndReturn;
+EndFunction;
+EndLevel;

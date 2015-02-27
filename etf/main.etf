@@ -1,0 +1,82 @@
+EasyCASE=CPP V6.5 14.06.1999 17:32:00
+ShortInfo;
+EndShortInfo;
+Options;
+IfLayout=horizontal
+LevelNumbers=no
+LineNumbers=no
+Colors=16777215,0,12582912,12632256,0,0,0,16711680,8388736,0,33023,32768,0,0,0,0,0,32768,12632256,255,65280,255,255,16711935
+ScreenFont=System,,100,1,-13,0,700,0,0,0,0,0,0,1,2,1,34,96,96
+PrinterFont=Courier,,120,1,-50,0,400,0,0,0,0,0,0,2,1,0,49,300,300
+LastLevelId=2
+EndOptions;
+Level=2:3
+Text:2
+Line=* Programm: NQUEENS
+Line=* Beschreibung: Das 8x8 Damen Problem. 
+Line=Suche nach *allen* Loesungen
+Line=* Algorithmus: Cooper,  Clancy (S.318)
+Line=* Autor: Rolf Hemmerling
+Line=* Version: 1.00
+Line=* Last Update: 08.06.1999
+Line=* Parameter: #-Konstante SIZE_BOARD 
+Line=bestimmt die Groesse des Schachbretts
+Line=
+Line=main.c
+EndText;
+LevelBody;
+Text:13
+Line=#include "nqueensh.h"
+Line=
+EndText;
+Text:15
+Line=// Globale Daten
+Line=
+Line=// Feld zur Aufnahme der Information, ob
+Line=// j-te Zeile frei ist
+Line=int MV_spalte[SIZE_SPALTE];
+Line=
+Line=// Feld zur Aufnahme der Information, ob
+Line=//  k-te /-Diagonale frei ist
+Line=int MV_li_diag[SIZE_LI_DIAG];
+Line=
+Line=// Feld zur Aufnahme der Information, ob
+Line=// k-te \-Diagonale frei ist
+Line=int MV_re_diag[SIZE_RE_DIAG];
+Line=
+Line=// Feld zur Aufnahme der Position der Dame 
+Line=int  MV_schachbrett[SIZE_SCHACHBRETT]
+Line=                                [SIZE_SCHACHBRETT];
+Line=
+EndText;
+Text:33
+Line=//
+Line=// * Funktion
+Line=// * Funktionsname: main()
+Line=// * Gueltigkeitsbereich: global (external)
+Line=// * Beschreibung: Wird bei Programmstart aufgerufen
+Line=// * Autor: Rolf Hemmerling
+Line=// * Version: 1.00
+Line=// * Last Update: 08.06.1999
+Line=// * Eingabe-Parameter: %
+Line=// * Ausgabe-Parameter: %
+Line=// * RÅckgabe-Wert: 0  (fehlerfreie AusfÅhrung)
+Line=// * Liste benutzter modulglobaler (static) Variablen: %
+Line=// * Liste benutzer globaler (external) Variablen: %
+Line=//
+EndText;
+Function:48
+Text:47
+Line=main()
+EndText;
+FunctionBody;
+Text:49
+Line=MP_nqueens();
+EndText;
+Return:50
+Text:50
+Line=0
+EndText;
+EndReturn;
+EndFunction;
+EndLevel;

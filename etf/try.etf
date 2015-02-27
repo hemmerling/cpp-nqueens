@@ -1,0 +1,131 @@
+EasyCASE=CPP V6.5 14.06.1999 18:39:18
+ShortInfo;
+EndShortInfo;
+Options;
+IfLayout=horizontal
+LevelNumbers=yes
+LineNumbers=yes
+Colors=16777215,0,12582912,12632256,0,0,0,16711680,8388736,0,33023,32768,0,0,0,0,0,32768,12632256,255,65280,255,255,16711935
+ScreenFont=System,,100,1,-13,0,700,0,0,0,0,0,0,1,2,1,34,96,96
+PrinterFont=Courier,,120,1,-50,0,400,0,0,0,0,0,0,2,1,0,49,300,300
+LastLevelId=1
+EndOptions;
+Level=1:3
+Text:2
+Line=try.c
+EndText;
+LevelBody;
+Text:3
+Line=#include "nqueensh.h"
+Line=
+EndText;
+Text:5
+Line=// * Funktion
+Line=// * Funktionsname: MP_try
+Line=// * Gueltigkeitsbereich: modulglobal (static)
+Line=// * Beschreibung: Eigentliche Suchfunktion fuer das N-Damen-Problem,
+Line=// ruft sich rekursiv auf
+Line=// * Autor: Rolf Hemmerling
+Line=// * Version: 1.00
+Line=// * Last Update: 08.06.1999
+Line=// * Eingabe-Parameter: aktuell bearbeitete Zeile
+Line=// * Ausgabe-Parameter %
+Line=// * Rueckgabe-Parameter: %
+Line=// * Liste benutzer modulgobaler (static) Variablen:
+Line=// * MV_spalte, MV_li_diag, MV_re_diag, MV_schachbrett
+Line=// * Liste benutzter globaler (external Variablen: %
+Line=//
+EndText;
+Function:21
+Text:20
+Line=void MP_try (int VV_zeile /* aktuell bearbeitete Zeile */ )
+EndText;
+FunctionBody;
+Text:22
+Line=
+Line=// Laufvariable
+Line=int PV_spalte = 1;
+Line=
+EndText;
+Text:26
+Line=// Schleife ueber alle Spalten
+EndText;
+DoWhile:27
+Text:29
+Line=// Abfrage ob "sicherer" Platz fuer Dame
+EndText;
+If:30
+Text:30
+Line=MP_check (VV_zeile, PV_spalte,
+Line=                  MV_spalte,
+Line=                  MV_li_diag,
+Line=                  MV_re_diag)
+EndText;
+Then;
+Text:35
+Line=// Dame setzten
+Line=MV_schachbrett[VV_zeile - OFFSET_SCHACHBRETT]
+Line=                          [PV_spalte - OFFSET_SCHACHBRETT] = TRUE;
+Line=// Vektoren aktualisieren: Die gesetzte Dame "blockiert" eine
+Line=// Spalte, eine linke und rechte Diagonale 
+Line=MV_spalte[PV_spalte - OFFSET_SPALTE] = FALSE;
+Line=MV_li_diag[VV_zeile + PV_spalte - OFFSET_LI_DIAG] = FALSE;
+Line=MV_re_diag[VV_zeile - PV_spalte - OFFSET_RE_DIAG] = FALSE;
+EndText;
+Text:43
+Line=// Wenn noch nicht alle Zeilen durchprobiert sind, dann
+Line=// rekursiver Funktionsaufruf, sonst Ausgabe
+EndText;
+If:45
+Text:45
+Line=VV_zeile < SIZE_BOARD
+EndText;
+Then;
+Text:47
+Line=// rekursiver Funktionsaufruf 
+Line=// fuer naechste Zeile
+Line=MP_try(VV_zeile + 1);
+EndText;
+Else;
+Text:53
+Line=
+Line=// Ergebnisausgabe
+Line=MP_print();
+Line=
+EndText;
+EndIf;
+Text:58
+Line=//  Dame wieder wegnehmen
+Line=MV_schachbrett[VV_zeile - OFFSET_SCHACHBRETT]
+Line=                          [PV_spalte - OFFSET_SCHACHBRETT] = FALSE;
+Line=//  Vektoren aktualisieren: Die weggenommene Dame "blockiert"
+Line=// die Spalte, rechte und linke Diagonale nicht mehr
+Line=MV_spalte[PV_spalte - OFFSET_SPALTE] = TRUE;
+Line=MV_li_diag[VV_zeile + PV_spalte - OFFSET_LI_DIAG] = TRUE;
+Line=MV_re_diag[VV_zeile - PV_spalte - OFFSET_RE_DIAG] = TRUE;
+EndText;
+Else;
+Text:69
+Line=// Wenn
+Line=// Platz 
+Line=// "unsicher",
+Line=// einfach
+Line=// nix tun 
+Line=// und 
+Line=// auf 
+Line=// naechste
+Line=// Spalte
+Line=// hoffen !
+EndText;
+EndIf;
+Text:80
+Line=// Naechste Spalte anwaehlen
+Line=PV_spalte++;
+EndText;
+Until;
+Text:83
+Line=PV_spalte <= SIZE_BOARD
+EndText;
+EndDoWhile;
+EndFunction;
+EndLevel;
