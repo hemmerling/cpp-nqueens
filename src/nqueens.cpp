@@ -1,3 +1,39 @@
+/**
+ *  @package   nqueens
+ *  @file      nqueens.cpp
+ *  @brief     Das 8x8 Damen Problem - Suche nach *allen* Loesungen 
+ *             Algorithmus: Cooper, Clancy (S.318)
+ *             Made with EasyCASE V6.5 1999-06-14 18:43:31
+ *  @author    Rolf Hemmerling <hemmerling@gmx.net>
+ *  @version   1.00, 
+ *             programming language "Microsoft Visual C++",
+ *             development tool chain 
+ *             "Microsoft Visual Studio Express 2013 for Windows Desktop"
+ *  @date      2015-01-01
+ *  @copyright Apache License, Version 2.0
+ *
+ *  nqueens.cpp - Das 8x8 Damen Problem - Suche nach *allen* Loesungen
+ *  
+ *  Copyright 1989-2015 Rolf Hemmerling
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing,
+ *  software distributed under the License is distributed on an
+ *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ *  either express or implied.
+ *  See the License for the specific language governing permissions
+ *  and limitations under the License.
+ *
+ *  Haupt-Entwicklungszeiten:
+ *    1999-03 - 1999-06-08, 1999-06-14
+ *    2004-07-13 ( Umstellung auf C++ )
+ */
+
 #include "nqueens.h"
 
 void NQueens::MP_nqueens(void)
@@ -22,9 +58,9 @@ void NQueens::MP_nqueens(void)
       {
       // Abfrage ob "sicherer" Platz fuer Dame
       if (MP_check (VV_zeile, PV_spalte,
-                            MV_spalte,
-                            MV_li_diag,
-                            MV_re_diag))
+                    MV_spalte,
+                    MV_li_diag,
+                    MV_re_diag))
          {
          // Dame setzten
          MV_schachbrett[VV_zeile - OFFSET_SCHACHBRETT]
@@ -163,7 +199,7 @@ void NQueens::MP_nqueens(void)
 
 
 
-main()
+int main()
    {
    NQueens *x = new NQueens;
    x->MP_nqueens();

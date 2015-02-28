@@ -1,5 +1,8 @@
 doc/html
 doc/rtf
+Debug
+*.v12.suo
+*.sdf
 garbage
 
 
