@@ -65,7 +65,6 @@ class NQueens
    *  @brief    Feld zur Aufnahme der Information, 
    *            ob k-te \-Diagonale frei ist
    */
-
   int MV_re_diag[SIZE_RE_DIAG];
   /**
    *  @var      MV_schachbrett
